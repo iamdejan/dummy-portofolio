@@ -23,7 +23,10 @@ function NavItem(props: PropsWithChildren<NavItemProps>): JSX.Element {
       {activeItem !== targetItem && (
         <Link href={targetItem.url}>
           <a>
-            <span onClick={() => setActiveItem(targetItem)}>
+            <span
+              onClick={() => setActiveItem(targetItem)}
+              className="hover:text-green"
+            >
               {targetItem.name}
             </span>
           </a>
@@ -54,9 +57,11 @@ export default function Navbar(): JSX.Element {
   }, [pathname]);
 
   return (
-    <div>
-      <span className="font-bold text-green">{activeItem.name}</span>
-      <div className="text-red font-lg">
+    <div className="flex justify-between px-5 py-3 my-3">
+      <span className="text-lg font-bold border-b-4 text-green border-green md:text-2xl">
+        {activeItem.name}
+      </span>
+      <div className="flex space-x-5 text-lg">
         <NavItem
           activeItem={activeItem}
           targetItem={ABOUT}
