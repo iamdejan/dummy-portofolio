@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         green: {
           DEFAULT: '#00f260',
+        },
+        red: {
+          DEFAULT: '#ff0000'
         }
       }
     },

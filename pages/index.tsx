@@ -3,5 +3,5 @@ export default function index(): JSX.Element {
     <div>
       <h1>Bye-bye world</h1>
     </div>
-  )
+  );
 }
