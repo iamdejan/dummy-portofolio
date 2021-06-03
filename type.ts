@@ -7,3 +7,11 @@ export class Service {
     readonly Icon: IconType
   ) {}
 }
+
+export class Skill {
+  constructor(
+    readonly name: string,
+    readonly level: string,
+    readonly Icon: IconType
+  ) {}
+}

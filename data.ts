@@ -1,6 +1,7 @@
 import { RiComputerLine, RiServerFill, RiSmartphoneLine } from "react-icons/ri";
 import { FaBrain, FaBitcoin, FaDatabase } from "react-icons/fa";
-import { Service } from "./type";
+import { BsCircleFill } from "react-icons/bs";
+import { Service, Skill } from "./type";
 
 export const services: Service[] = [
   new Service(
@@ -33,4 +34,19 @@ export const services: Service[] = [
     "Don't even thik about it. I can barely scale my code, let alone my server",
     FaDatabase
   ),
+];
+
+export const languages: Skill[] = [
+  new Skill("Python", "80%", BsCircleFill),
+  new Skill("Java", "90%", BsCircleFill),
+  new Skill("Rust", "50%", BsCircleFill),
+  new Skill("TypeScript", "55%", BsCircleFill),
+  new Skill("Go", "50%", BsCircleFill),
+  new Skill("SQL", "80%", BsCircleFill),
+];
+
+export const tools: Skill[] = [
+  new Skill("Figma", "60%", BsCircleFill),
+  new Skill("Photoshop", "55%", BsCircleFill),
+  new Skill("Jira", "70%", BsCircleFill),
 ];
