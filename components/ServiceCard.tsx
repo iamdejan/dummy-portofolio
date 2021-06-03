@@ -10,7 +10,7 @@ export default function ServiceCard(
 ): JSX.Element {
   return (
     <div className="flex items-center p-2 space-x-4">
-      <props.service.icon className="w-12 h-12 text-green" />
+      <props.service.Icon className="w-12 h-12 text-green" />
       <div>
         <h4 className="font-bold">{props.service.title}</h4>
         <p>{props.service.description}</p>
