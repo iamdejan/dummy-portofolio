@@ -15,3 +15,16 @@ export class Skill {
     readonly Icon: IconType
   ) {}
 }
+
+export type Category = "react" | "database" | "node" | "express" | "django";
+
+export class Project {
+  constructor(
+    readonly name: string,
+    readonly description: string,
+    readonly imagePath: string,
+    readonly deployedUrl: string,
+    readonly category: Category[],
+    readonly keyTechs: string[]
+  ) {}
+}

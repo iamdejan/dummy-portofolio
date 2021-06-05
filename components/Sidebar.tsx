@@ -20,7 +20,7 @@ export default function Sidebar(): JSX.Element {
   return (
     <div>
       <img
-        src="../photo.jpg"
+        src="images/photo.jpg"
         alt="avatar"
         className="w-32 h-32 mx-auto rounded-full"
       />

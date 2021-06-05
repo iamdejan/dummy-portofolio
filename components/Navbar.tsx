@@ -25,6 +25,7 @@ function NavItem(props: PropsWithChildren<NavItemProps>): JSX.Element {
             <span
               onClick={() => setActiveItem(targetItem)}
               className="hover:text-green"
+              role="button"
             >
               {targetItem.name}
             </span>
