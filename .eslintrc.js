@@ -26,6 +26,6 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
     "unused-imports/no-unused-imports-ts": "error",
-    "prettier/prettier": ["error", {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
+    "prettier/prettier": "error",
   },
 };

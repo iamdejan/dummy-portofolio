@@ -14,7 +14,7 @@ export default function index(): JSX.Element {
       </h5>
 
       <div
-        className="p-4 mt-5 bg-gray-400"
+        className="p-4 mt-5 bg-gray-400 dark:bg-dark-100"
         style={{
           marginLeft: "-1.5rem",
           marginRight: "-1.5rem",
@@ -24,7 +24,10 @@ export default function index(): JSX.Element {
         <div className="grid gap-6 lg:grid-cols-2">
           {services.map((service: Service, i: number) => {
             return (
-              <div key={i} className="bg-gray-200 rounded-lg lg:col-span-1">
+              <div
+                key={i}
+                className="bg-gray-200 rounded-lg dark:bg-dark-200 lg:col-span-1"
+              >
                 <ServiceCard service={service} />
               </div>
             );

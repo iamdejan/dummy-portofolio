@@ -1,7 +1,6 @@
-import { useState, useEffect, PropsWithChildren } from "react";
-
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 class Item {
   constructor(readonly name: string, readonly url: string) {}

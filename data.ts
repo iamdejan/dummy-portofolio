@@ -1,6 +1,7 @@
-import { RiComputerLine, RiServerFill, RiSmartphoneLine } from "react-icons/ri";
-import { FaBrain, FaBitcoin, FaDatabase } from "react-icons/fa";
 import { BsCircleFill } from "react-icons/bs";
+import { FaBitcoin, FaBrain, FaDatabase } from "react-icons/fa";
+import { RiComputerLine, RiServerFill, RiSmartphoneLine } from "react-icons/ri";
+
 import { Service, Skill } from "./type";
 
 export const services: Service[] = [
