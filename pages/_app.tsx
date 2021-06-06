@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <div className="col-span-12 p-4 text-center bg-white dark:bg-dark-500 lg:col-span-4 rounded-2xl shadow-custom-light dark:shadow-custom-dark">
           <Sidebar />
         </div>
-        <div className="flex flex-col col-span-12 overflow-hidden bg-white lg:col-span-8 rounded-2xl dark:bg-dark-500 shadow-custom-light dark:shadow-custom-dark">
+        <div className="flex flex-col col-span-12 overflow-auto bg-white lg:col-span-8 rounded-2xl dark:bg-dark-500 shadow-custom-light dark:shadow-custom-dark">
           <Navbar />
           <Component {...pageProps} />
         </div>

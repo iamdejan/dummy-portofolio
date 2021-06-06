@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PropsWithChildren, useState } from "react";
 import { AiFillProject } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
@@ -17,22 +18,29 @@ export default function ProjectCard(
 
   return (
     <div>
-      <img
+      <Image
         src={project.imagePath}
         alt={project.name}
         className="cursor-pointer"
         onClick={() => setIsDetail(true)}
+        width="300"
+        height="150"
+        layout="responsive"
+        quality="80"
       />
       <p className="my-2 text-center">{project.name}</p>
 
       {isDetail && (
         <div className="absolute top-0 left-0 z-20 grid w-full h-auto p-2 text-black bg-gray-100 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-dark-100">
           <div>
-            <img
+            <Image
               src={project.imagePath}
               alt={project.name}
-              className="cursor-pointer"
+              width="300"
+              height="150"
+              layout="responsive"
             />
+
             <div className="flex justify-center my-4 space-x-3">
               <a
                 href={project.deployedUrl}

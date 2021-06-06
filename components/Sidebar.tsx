@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
 import { GiTie } from "react-icons/gi";
 import { GoLocation } from "react-icons/go";
@@ -19,10 +20,12 @@ export default function Sidebar(): JSX.Element {
 
   return (
     <div>
-      <img
-        src="images/photo.jpg"
+      <Image
+        src="/images/photo.jpg"
         alt="avatar"
-        className="w-32 h-32 mx-auto rounded-full"
+        className="mx-auto rounded-full"
+        width="128"
+        height="128"
       />
       <h3 className="my-4 text-3xl font-medium tracking-wider font-kaushan">
         <span className="text-green">Giovanni </span>
