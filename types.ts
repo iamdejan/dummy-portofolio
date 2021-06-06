@@ -24,7 +24,7 @@ export class Project {
     readonly description: string,
     readonly imagePath: string,
     readonly deployedUrl: string,
-    readonly category: Category[],
+    readonly categories: Category[],
     readonly keyTechs: string[]
   ) {}
 }

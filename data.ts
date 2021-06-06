@@ -2,7 +2,7 @@ import { BsCircleFill } from "react-icons/bs";
 import { FaBitcoin, FaBrain, FaDatabase } from "react-icons/fa";
 import { RiComputerLine, RiServerFill, RiSmartphoneLine } from "react-icons/ri";
 
-import { Project, Service, Skill } from "./type";
+import { Project, Service, Skill } from "./types";
 
 export const services: Service[] = [
   new Service(
@@ -66,7 +66,7 @@ export const myProjects: Project[] = [
     "I imagine myself having a bank and developed the mobile app.",
     "https://pbs.twimg.com/media/EeqJ0KnU8AAP2Ua.png",
     "https://play.google.com",
-    ["django"],
+    ["django", "database"],
     ["Flutter", "Android Studio"]
   ),
   new Project(

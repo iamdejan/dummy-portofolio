@@ -1,6 +1,6 @@
 import Bar from "../components/Bar";
 import { languages, tools } from "../data";
-import { Skill } from "../type";
+import { Skill } from "../types";
 
 export default function resume(): JSX.Element {
   return (

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import { Service } from "../type";
+import { Service } from "../types";
 
 interface Props {
   service: Service;

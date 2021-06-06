@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import { Skill } from "../type";
+import { Skill } from "../types";
 
 interface Props {
   data: Skill;

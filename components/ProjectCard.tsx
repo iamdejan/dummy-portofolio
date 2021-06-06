@@ -2,7 +2,7 @@ import { PropsWithChildren, useState } from "react";
 import { AiFillProject } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 
-import { Project } from "../type";
+import { Project } from "../types";
 
 interface Props {
   project: Project;

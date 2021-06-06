@@ -1,6 +1,6 @@
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
-import { Service } from "../type";
+import { Service } from "../types";
 
 export default function index(): JSX.Element {
   return (

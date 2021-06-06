@@ -26,7 +26,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": "error",
     eqeqeq: ["error", "smart"],
     "no-await-in-loop": "error",
-    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
     "unused-imports/no-unused-imports-ts": "error",
     "prettier/prettier": "error",
