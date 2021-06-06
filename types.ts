@@ -28,3 +28,5 @@ export class Project {
     readonly keyTechs: string[]
   ) {}
 }
+
+export type WithAll<T> = T | "all";

@@ -1,16 +1,26 @@
 import { PropsWithChildren } from "react";
 
-import { Category } from "../types";
+import { Category, WithAll } from "../types";
 
 interface NavItemProps {
   value: Category | "all";
-  handleFilterCategory: (category: Category | "all") => void;
+  handleFilterCategory: (category: WithAll<Category>) => void;
+  activeCategory: Category | "all";
 }
 
 function NavItem(props: PropsWithChildren<NavItemProps>): JSX.Element {
+  const classNames: string[] = [
+    "capitalize",
+    "cursor-pointer",
+    "hover:text-green",
+  ];
+  if (props.value === props.activeCategory) {
+    classNames.push("text-green");
+  }
+
   return (
     <li
-      className="capitalize cursor-pointer hover:text-green"
+      className={classNames.join(" ")}
       onClick={() => props.handleFilterCategory(props.value)}
     >
       {props.value}
@@ -19,7 +29,8 @@ function NavItem(props: PropsWithChildren<NavItemProps>): JSX.Element {
 }
 
 interface Props {
-  handleFilterCategory: (category: Category | "all") => void;
+  handleFilterCategory: (category: WithAll<Category>) => void;
+  activeCategory: Category | "all";
 }
 
 export default function ProjectNavbar(

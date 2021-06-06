@@ -3,14 +3,17 @@ import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import ProjectNavbar from "../components/ProjectNavbar";
 import { myProjects } from "../data";
-import { Category, Project } from "../types";
+import { Category, Project, WithAll } from "../types";
 
 export default function projects(): JSX.Element {
   const [activeProjects, setActiveProjects] = useState<Project[]>(myProjects);
+  const [activeCategory, setActiveCategory] =
+    useState<WithAll<Category>>("all");
 
-  function handle(category: Category | "all") {
+  function handle(category: WithAll<Category>) {
     if (category === "all") {
       setActiveProjects(myProjects);
+      setActiveCategory(activeCategory);
       return;
     }
 
@@ -19,6 +22,7 @@ export default function projects(): JSX.Element {
         return project.categories.includes(category);
       })
     );
+    setActiveCategory(category);
   }
 
   return (
@@ -28,7 +32,10 @@ export default function projects(): JSX.Element {
         height: "65vh",
       }}
     >
-      <ProjectNavbar handleFilterCategory={handle} />
+      <ProjectNavbar
+        handleFilterCategory={handle}
+        activeCategory={activeCategory}
+      />
 
       <div className="relative grid grid-cols-12 gap-4 my-3">
         {activeProjects.map((project: Project, i: number) => {
