@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+
+import { fadeInUp, stagger } from "../animate";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
 import { Service } from "../types";
@@ -21,18 +24,24 @@ export default function index(): JSX.Element {
         }}
       >
         <h6 className="my-3 text-xl font-bold tracking-wide">My Skills</h6>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <motion.div
+          className="grid gap-6 lg:grid-cols-2"
+          variants={stagger}
+          initial="initial"
+          animate="animate"
+        >
           {services.map((service: Service, i: number) => {
             return (
-              <div
+              <motion.div
                 key={i}
                 className="bg-gray-200 rounded-lg dark:bg-dark-200 lg:col-span-1"
+                variants={fadeInUp}
               >
                 <ServiceCard service={service} />
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
