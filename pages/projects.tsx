@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 
+import { fadeInUp, stagger } from "../animate";
 import ProjectCard from "../components/ProjectCard";
 import ProjectNavbar from "../components/ProjectNavbar";
 import { myProjects } from "../data";
@@ -37,18 +39,24 @@ export default function projects(): JSX.Element {
         activeCategory={activeCategory}
       />
 
-      <div className="relative grid grid-cols-12 gap-4 my-3">
+      <motion.div
+        className="relative grid grid-cols-12 gap-4 my-3"
+        variants={stagger}
+        initial="initial"
+        animate="animate"
+      >
         {activeProjects.map((project: Project, i: number) => {
           return (
-            <div
+            <motion.div
               key={i}
               className="col-span-12 p-2 bg-gray-200 rounded-lg sm:col-span-6 lg:col-span-4 dark:bg-dark-200"
+              variants={fadeInUp}
             >
               <ProjectCard key={i} project={project} />
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

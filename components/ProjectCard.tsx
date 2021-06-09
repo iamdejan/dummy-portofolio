@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { PropsWithChildren, useState } from "react";
 import { AiFillProject } from "react-icons/ai";
 import { MdClose } from "react-icons/md";
 
+import { fadeInUp, stagger } from "../animate";
 import { Project } from "../types";
 
 interface Props {
@@ -32,31 +34,46 @@ export default function ProjectCard(
 
       {isDetail && (
         <div className="absolute top-0 left-0 z-20 grid w-full h-auto p-2 text-black bg-gray-100 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-dark-100">
-          <div>
-            <Image
-              src={project.imagePath}
-              alt={project.name}
-              width="300"
-              height="150"
-              layout="responsive"
-            />
+          <motion.div variants={stagger} initial="initial" animate="animate">
+            <motion.div variants={fadeInUp}>
+              <Image
+                src={project.imagePath}
+                alt={project.name}
+                width="300"
+                height="150"
+                layout="responsive"
+              />
+            </motion.div>
 
-            <div className="flex justify-center my-4 space-x-3">
+            <motion.div
+              className="flex justify-center my-4 space-x-3"
+              variants={fadeInUp}
+            >
               <a
                 href={project.deployedUrl}
                 className="flex items-center px-4 py-2 space-x-3 text-lg bg-gray-200 dark:bg-dark-200"
               >
                 <AiFillProject /> <span>Project</span>
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
-            <h2 className="mb-3 text-xl font-medium md:text-2xl">
+          <motion.div variants={stagger} initial="initial" animate="animate">
+            <motion.h2
+              variants={fadeInUp}
+              className="mb-3 text-xl font-medium md:text-2xl"
+            >
               {project.name}
-            </h2>
-            <h3 className="mb-3 font-medium">{project.description}</h3>
-            <div className="flex flex-wrap mt-5 space-x-2 text-sm tracking-wider">
+            </motion.h2>
+
+            <motion.h3 variants={fadeInUp} className="mb-3 font-medium">
+              {project.description}
+            </motion.h3>
+
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-wrap mt-5 space-x-2 text-sm tracking-wider"
+            >
               {project.keyTechs.map((tech: string, i: number) => {
                 return (
                   <span
@@ -67,8 +84,8 @@ export default function ProjectCard(
                   </span>
                 );
               })}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <button
             onClick={() => setIsDetail(false)}

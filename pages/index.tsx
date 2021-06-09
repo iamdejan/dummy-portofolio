@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 
-import { fadeInUp, stagger } from "../animate";
+import { fadeInUp, routeAnimation, stagger } from "../animate";
 import ServiceCard from "../components/ServiceCard";
 import { services } from "../data";
 import { Service } from "../types";
 
 export default function index(): JSX.Element {
   return (
-    <div className="flex flex-col px-6 pt-1">
+    <motion.div
+      className="flex flex-col px-6 pt-1"
+      variants={routeAnimation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <h5 className="my-3 font-medium">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
         pulvinar viverra dui, eget volutpat augue hendrerit et. Duis ut odio non
@@ -43,6 +49,6 @@ export default function index(): JSX.Element {
           })}
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
