@@ -29,7 +29,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/unbound-method": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    eqeqeq: ["error", "smart"],
+    "eqeqeq": ["error", "smart"],
     "no-await-in-loop": "error",
     "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
